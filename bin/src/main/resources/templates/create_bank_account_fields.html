@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<form th:action="@{/create_bank_account}">
+    <div><label> Currency: <input type="text" name="currency" id="currency"> </label></div>
+    <div><input type="submit" value="Create bank acount"/></div>
+</form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<form th:action="@{/create_new_transaction}">
+    <div><label> Target Username: <input type="text" name="targetUserName" id="targetUserName"> </label></div>
+    <div><label> Target Account ID: <input type="text" name="targetAccountId" id="targetAccountId"> </label></div>
+    <div><label> Amount: <input type="text" name="amount" id="amount"/> </label></div>
+    <div><input type="submit" value="Send money"/></div>
+</form>
+</body>
+</html>

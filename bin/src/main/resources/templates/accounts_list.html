@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">List of accounts</h1>
+<tr th:each="account : ${accounts}">
+    <td th:text="${account.currency}"></td>
+    <td th:text="${account.balance}"></td>
+    <td><form th:action="@{'/delete_bank_account/{accountIdValue}'(accountIdValue=${account.accountId})}">
+        <input type="submit" value="DELETE"/>
+    </form></td>
+    <td><form th:action="@{'/keep_data_of_bank_account/{accountIdValue}' (accountIdValue=${account.accountId})}">
+        <input type="submit" value="CREATE TRANSACTION"/>
+    </form></td>
+    <td><form th:action="@{'/add_money_to_my_account/{accountIdValue}' (accountIdValue=${account.accountId})}">
+        <input type="submit" value="ADD MONEY TO BANK ACCOUNT"/>
+    </form></td>
+    <td><form th:action="@{'/complete_date_transaction_backend/{accountIdValue}' (accountIdValue=${account.accountId})}">
+        <input type="submit" value="LIST TRANSACTIONS FOR BANK ACCOUNT"/>
+    </form></td>
+<!--    <td><form th:action="@{'/list_transactions_for_account/{accountIdValue}' (accountIdValue=${account.accountId})}">-->
+<!--        <input type="submit" value="LIST TRANSACTIONS FOR BANK ACCOUNT"/>-->
+<!--    </form></td>-->
+    <td><br></td>
+</tr>
+<form th:action="@{/hello}">
+    <input type="submit" value="BACK"/>
+</form>
+</body>
+</html>

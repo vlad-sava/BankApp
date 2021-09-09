@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<form th:action="@{/date_input_fields}">
+    <div><label> Start date: <input type="datetime-local" name="startDate" id="startDate"/> </label></div>
+    <div><label> End date: <input type="datetime-local" name="endDate" id="endDate"/> </label></div>
+    <div><input type="submit" value="Show transactions"/></div>
+</form>
+</body>
+</html>
